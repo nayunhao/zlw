@@ -1,0 +1,67 @@
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.238:3306/zlead_user?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    platform: mysql
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    #指定连接工厂使用的Database index，默认为: 0
+    database: 0
+    #指定Redis server host，默认为: localhost
+    host: 192.168.0.238
+    #指定redis服务端端口，默认: 6379
+    port: 6379
+    #指定Redis server的密码
+    password:
+    #指定连接超时时间，毫秒单位，默认为0
+    timeout: 5000
+    pool:
+      #指定连接池最大的活跃连接数，-1表示无限，默认为8
+      max-active: 8
+      #指定连接池最大的空闲连接数，-1表示无限，默认为8
+      max-idle: 8
+      #指定当连接池耗尽时，新获取连接需要等待的最大时间，以毫秒单位，-1表示无限等待
+      max-wait: -1
+      #指定连接池中空闲连接的最小数量，默认为0
+      min-idle: 2
+
+      #指定redis server的名称
+      #sentinel:
+      #master:127.0.0.1
+      #指定sentinel节点，逗号分隔，格式为host:port.
+      #nodes:127.0.0.1:6379,127.0.0.1:6380,127.0.0.1:6381
+  mvc:
+    static-path-pattern: "/image/**"
+  resources:
+    static-locations: "classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/"
+  cache-period: 0
+  http:
+    multipart:
+      enabled: true   # 启用http上传处理
+      max-file-size: 100MB # 设置单个文件的最大长度
+      max-request-size: 100MB # 设置最大的请求文件的大小
+      file-size-threshold: 1MB  # 当上传文件达到1MB的时候进行磁盘写入
+
+sms:
+  method: post   #短信服务调用协议
+  domain: dysmsapi.aliyuncs.com  #短信服务链接
+  version: 2017-05-25  #版本时间
+  action: SendSms   #服务名
+  signname: 直链网 #短信签名
+  regionId: cn-hangzhou
+  accessKeyId: LTAIk2RIv9JiWIuw
+  accessSecret: KTPKPESXutMh37qnFp6rVMqF2GcOXu
+  templates: {idVerify: "SMS_166450684",
+               loginConfirm: "SMS_166450683",
+               loginException: "SMS_166450682",
+               register: "SMS_166450681",
+               updatePass: "SMS_166450680",
+               infoUpdate: "SMS_166450679"}
+  serviceIds: {idVerify: "1",
+                register: "2"}
+
+
