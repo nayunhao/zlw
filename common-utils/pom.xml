@@ -18,7 +18,7 @@
         <commons.lang.version>2.6</commons.lang.version>
         <commons.lang3.version>3.5</commons.lang3.version>
         <commons.pool.version>1.6</commons.pool.version>
-        <commons.io.version>2.5</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <commons.beanutils.version>1.9.3</commons.beanutils.version>
         <javax.servlet.api>4.0.0-b01</javax.servlet.api>
         <pinyin4j.version>2.5.1</pinyin4j.version>
