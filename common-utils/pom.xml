@@ -31,7 +31,7 @@
         <fastjson.version>1.2.47</fastjson.version>
         <httpclient.version>4.5.8</httpclient.version>
         <commons.httpclient.version>3.1</commons.httpclient.version>
-        <springframework.version>5.1.7.RELEASE</springframework.version>
+        <springframework.version>5.3.18</springframework.version>
         <spring.cloud.context>2.1.1.RELEASE</spring.cloud.context>
     </properties>
     <dependencies>
